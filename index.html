@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>同济医护版</title>
+	<link rel="shortcut icon" href="image/favicon.ico">
+	<!-- 强制让文档的宽度与设备的宽度保持1:1，并且文档最大的宽度比例是1.0，且不允许用户点击屏幕放大浏览 -->
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width, minimal-ui">
+	<!-- iphone设备中的safari私有meta标签，它表示：允许全屏模式浏览 -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<link rel="stylesheet" href="./lib/ionicon/css/ionicons.min.css">
+	<link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+	<div id="content" class="home-loading">
+		···加载中···
+	</div>
+	<script>
+		// sataticServer为本地服务器地址
+		// appServer为接口服务器地址
+		$TJ = {
+			staticServer: "http://127.0.0.1:9090",
+			appServer: "http://192.168.1.115:9003"
+		};
+	</script>
+	<script data-main="./js/main" src="./lib/require.js"></script>
+</body>
+</html>
