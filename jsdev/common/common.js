@@ -12,9 +12,8 @@ define(['jquery'], function($) {
 				dataType: 'json',
 				contentType: "application/json",
 				beforeSend: function(XMLHttpRequest) {
-					XMLHttpRequest.setRequestHeader("authentication", "eGCu0i1reCeM4mNOIwc4iS0EaCRrUr4f8DhvK/Vy7Ur8QhKn9F7BiLV1yw/y4Z3nm4QYs6aWGIvj9GS5z/CKSSOxvSwnCdM+osBq5uafdVrttjOwhYCuUz2TghEm9SK2d1UdrT2qOonoiM0+w86jNWRE6iRrOBKEOXlrTsJjZqE=");
-					XMLHttpRequest.setRequestHeader("os-type", "h5");
-					XMLHttpRequest.setRequestHeader("hospital", "WUHAN_TONGJI");
+					// 设置header
+					XMLHttpRequest.setRequestHeader("", "");
 				}
 			}
 			options = $.extend(params, options);
