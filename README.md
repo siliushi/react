@@ -2,7 +2,7 @@
 
 >  
 为了深入学习react，做了一个简单的react project。此项目是一个简单的mvc项目，UI使用了Facebook的react技术，如图所示   
-![首页](/image/home.png)
+![首页](/image/home.png)    
 只做了其中规章制度、药物词典、通知公告这三个模块
 
 
