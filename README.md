@@ -3,7 +3,7 @@
 >  
 tjDoctor为同济医护版前端静态文件，随便启动一个服务就可以访问    
     
-[在线浏览](http://baixuexiyang.github.io/react/)   
+[在线浏览](http://baixuexiyang.github.io/react/)，为了更好的效果请将浏览器设置为手机模式   
 
 # Compile   
 
