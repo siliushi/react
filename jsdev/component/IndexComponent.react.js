@@ -17,7 +17,7 @@ define([
         render: function () {
             return (<div>
     				<div className="baner">
-                        <img src='/image/photo.png' className="photo" />
+                        <img src='/react//image/photo.png' className="photo" />
                         <h3>王一</h3>
                         <div>您好！欢迎使用</div>
     				</div>
