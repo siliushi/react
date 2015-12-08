@@ -23,13 +23,11 @@ UI使用react技术，所以上线之前需要将jsx编译为javascript。
  + favicon.ico
 
 # Release
+
 >
-修改index.html文件,正确配置`staticServer`,`appServer`的值
->
-```js
-$TJ = {
-    staticServer: "http://192.168.106.156:9090",
-    appServer: "http://192.168.1.115:9003"
-};
-```
+
+### 2015-12-08
+ + 增加rem布局
+ + 修改iscroll滚动在Android上的问题
+
 
