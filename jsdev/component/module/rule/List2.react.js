@@ -3,8 +3,9 @@
 define([
     'react',
     'backbone',
+    'common',
     'jsx!component/common/HeaderComponent.react'
-], function (React, Backbone, HeaderComponent) {
+], function (React, Backbone, common, HeaderComponent) {
 
     return React.createClass({
         getInitialState: function() {
@@ -36,6 +37,7 @@ define([
                     });
                 }, 100);
             });
+            common.scrollbar();
             /*$.get(this.props.source, function(result) {
                 var lastGist = result[0];
                 if (this.isMounted()) {

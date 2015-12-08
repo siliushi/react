@@ -3,16 +3,18 @@
 require.config({
     paths: {
         jquery: '../lib/jquery.min',
-        iscroll: '../lib/iscroll',
+        iscroll: '../lib/iscroll.min',
         react: '../lib/react-with-addons.min',
-        "JSXTransformer": '../lib/JSXTransformer',
-        jsx: '../lib/jsx',
-        backbone: '../lib/backbone',
+        "JSXTransformer": '../lib/JSXTransformer.min',
+        jsx: '../lib/jsx.min',
+        backbone: '../lib/backbone.min',
         underscore: '../lib/lodash.min',
-        text: '../lib/text',
-        json: '../lib/json',
-        common: 'common/common'
+        text: '../lib/text.min',
+        json: '../lib/json.min',
+        common: 'common/common.js?v=1.0.0',
+        api: 'common/api'
     },
+    waitSeconds: 0,
     shim: {
         touchwipe: ['jquery'],
         underscore: {
@@ -22,7 +24,7 @@ require.config({
 });
 
 require([
-    'backbone', 'jsx!main.react'
-], function (Backbone, App) {
+    'main.react'
+], function (App) {
     App.initialize();
 });

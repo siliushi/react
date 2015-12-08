@@ -12,20 +12,20 @@ gulp.task('sass', function () {
 });
 
 // jsx语法编译
-gulp.task('compile', function () {
+gulp.task('react', function () {
     return gulp.src('./jsdev/**/*.js')
         .pipe(react())
         .pipe(gulp.dest('dist'));
 });
 
-
 // js打包
-gulp.task('compress', ['compile'], function() {
-	return gulp.src(['./dist/**/*.js'])
-	.pipe(uglify({
-	  mangle: false
-	}))
-	.pipe(gulp.dest("js/"))
+gulp.task('compress', function () {
+    return gulp.src('./jsdev/**/*.js')
+        .pipe(react())
+        .pipe(uglify({
+          mangle: false
+        }))
+        .pipe(gulp.dest('js/'));
 });
 
 

@@ -2,23 +2,31 @@
 
 define([
     'react',
+    'common',
     'jsx!component/common/HeaderComponent.react'
-], function (React, HeaderComponent) {
+], function (React, common, HeaderComponent) {
 
     return React.createClass({
+		getInitialState : function(){
+			return {
+				res : {}
+			}
+		},
         componentDidMount: function() {
+            var me = this;
             $('#content').removeClass('home-loading').removeClass('pt-page-moveToLeft').addClass('pt-page-moveFromLeft');
+            common.scrollbar();
         },
         componentWillUnmount: function() {
             $('#content').removeClass('pt-page-moveFromLeft').addClass('pt-page-moveToLeft');
         },
         render: function () {
             var header = '';
+            var res = this.state.res;
             if($TJ.hasHeader) {
                 header = <HeaderComponent back={true} title={"规章制度"} sideBar={"收藏"} />;
             }
-            // var names = ['Alice', 'Emily', 'Kate'];
-            return <div>
+            return  <div>
                         {header}
                         <div className={$TJ.hasHeader ? 'hasHeader' : ''}>
                             <div className="content">

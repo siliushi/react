@@ -3,8 +3,9 @@
 define([
     'react',
     'backbone',
+    'common',
     'jsx!component/common/HeaderComponent.react'
-], function (React, Backbone, HeaderComponent) {
+], function (React, Backbone, common, HeaderComponent) {
 
     return React.createClass({
         componentWillUnmount: function() {
@@ -77,7 +78,8 @@ define([
             });
             $('.arrow-right').on('click', function() {
                 
-            })
+            });
+            common.scrollbar();
         },
         componentDidUpdate: function() {
             $('.dictionary-detail').on('click', function() {

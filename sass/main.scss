@@ -1,14 +1,11 @@
 @import "theme.scss";
-
-
-$baseFontSize:      16px !default; 
+$baseFontSize:16px !default; 
 
 // pixels to rems 
 @function pxToRem($px) {
   	@return $px / $baseFontSize * 1rem;
 }
 
-// 图片尺寸
 @function getSize($px) {
 	@return $px / 2;
 }
@@ -30,7 +27,10 @@ html {
 
 body {
 	text-align: center;
-	background-color:#f2f2f2;
+	background-color:$body-color;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-size-adjust: 100%;
 }
 ul {
 	list-style: none;
@@ -38,27 +38,27 @@ ul {
 
 a {
 	text-decoration: none;
-	color: #666666;
+	color: $a-color;
 }
 a:link {
-	color: #666666;
+	color: $a-color;
 }
 a:visited {
-	color: #666666;
+	color: $a-color;
 }
 a:hover {
-	color: #666666;
+	color: $a-color;
 }
 a:active {
-	color: #666666;
+	color: $a-color;
 }
 
 input {
   font-weight: normal;
   font-family: "AvenirNextLTPro-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-appearance: none;
-  &::-ms-clear{display: none;}
-  &::-ms-reveal{display: none;}
+  &:-ms-clear{display: none;}
+  &:-ms-reveal{display: none;}
 }
 
 button, input, select, textarea {
@@ -71,18 +71,34 @@ button, input, select, textarea {
     background-image: none;
 }
 
+#search::-webkit-search-cancel-button{
+	display:none;
+}
+
+.no-message {
+  margin-top: pxToRem(100px);
+  font-family: 'Heiti SC Regular', 'Heiti SC';
+  font-weight: 400;
+  font-style: normal;
+  font-size: pxToRem(36px);
+  color: $gray-color;
+  text-align: center;
+  background-color:$body-color;
+}
+
 .list {
 	text-align: left;
 	background-color: $white-color;
 	.item {
-		padding: 15px 10px;
-		border-top: 1px solid #e3e3e3;
+		padding: pxToRem(15px) pxToRem(10px);
+		border-top: 1px solid $item-border-color;
+		cursor: pointer;
 	}
 	.item.top {
 		background-color: $white-color;
 	}
 	.item:last-child {
-		border-bottom: 1px solid #e3e3e3;
+		border-bottom: 1px solid $item-border-color;
 	}
 }
 .item.go-right:after {
@@ -91,18 +107,18 @@ button, input, select, textarea {
 	position: absolute;
   	left: 100%;
 	display: block;
-	margin-top: -14px;
-	color: #ccc;
+	margin-top: pxToRem(-14px);
+	color: $gray-color;
 	content:"\f125";
 	text-transform: none;
 	font-weight: normal;
 	font-style: normal;
 	font-variant: normal;
-	font-size: 16px;
+	font-size: pxToRem(16px);
 	font-family:'Ionicons';
 	line-height: 1;
 	speak: none;
-	margin-left: -20px;
+	margin-left: pxToRem(-20px);
 }
 .item.go-down:after {
   -webkit-font-smoothing: antialiased;
@@ -111,17 +127,17 @@ button, input, select, textarea {
   left: 100%;
   display: block;
   margin-top: -4%;
-  color: #ccc;
+  color: $gray-color;
   content:"\f123";
   text-transform: none;
   font-weight: normal;
   font-style: normal;
   font-variant: normal;
-  font-size: 16px;
+  font-size: pxToRem(16px);
   font-family:'Ionicons';
   line-height: 1;
   speak: none;
-  margin-left: -25px;
+  margin-left: pxToRem(-25px);
 }
 .item.go-up:after {
   -webkit-font-smoothing: antialiased;
@@ -130,17 +146,17 @@ button, input, select, textarea {
   left: 100%;
   display: block;
   margin-top: -4%;
-  color: #ccc;
+  color: $gray-color;
   content:"\f126";
   text-transform: none;
   font-weight: normal;
   font-style: normal;
   font-variant: normal;
-  font-size: 16px;
+  font-size: pxToRem(16px);
   font-family:'Ionicons';
   line-height: 1;
   speak: none;
-  margin-left: -25px;
+  margin-left: pxToRem(-25px);
 }
 .item.go-left:after {
 	-webkit-font-smoothing: antialiased;
@@ -148,74 +164,115 @@ button, input, select, textarea {
 	position: absolute;
   	left: 100%;
 	display: block;
-	margin-top: -8px;
-	color: #ccc;
+	margin-top: pxToRem(-8px);
+	color: $gray-color;
 	content:"\f124";
 	text-transform: none;
 	font-weight: normal;
 	font-style: normal;
 	font-variant: normal;
-	font-size: 16px;
+	font-size: pxToRem(16px);
 	font-family:'Ionicons';
 	line-height: 1;
 	speak: none;
-	margin-left: -20px;
+	margin-left: pxToRem(-20px);
 }
 .go-left:after {
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
 	position: absolute;
-	left: 30px;
+	left: pxToRem(30px);
 	top: 50%;
 	display: block;
-	margin-top: -8px;
-	color: #fff;
+	margin-top: pxToRem(-8px);
+	color: $white-color;
 	content: "\f124";
 	text-transform: none;
 	font-weight: normal;
 	font-style: normal;
 	font-variant: normal;
-	font-size: 16px;
+	font-size: pxToRem(16px);
 	font-family: 'Ionicons';
 	line-height: 1;
 	speak: none;
-	margin-left: -20px;
+	margin-left: pxToRem(-20px);
 }
 .arrow-down:after {
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
-	left: 30px;
+	left: pxToRem(30px);
 	display: block;
-	margin-top: -17px;
-	color: #000;
+	margin-top: pxToRem(-17px);
+	color: $black-color;
 	content: "\f104";
 	text-transform: none;
 	font-weight: normal;
 	font-style: normal;
 	font-variant: normal;
-	font-size: 16px;
+	font-size: pxToRem(16px);
 	font-family: 'Ionicons';
 	line-height: 1;
 	speak: none;
-	margin-left: -20px;
+	margin-left: pxToRem(-20px);
 }
 .arrow-right:after {
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
-	left: 30px;
+	left: pxToRem(30px);
 	display: block;
-	margin-top: -17px;
-	color: #000;
+	margin-top: pxToRem(-17px);
+	color: $black-color;
 	content: "\f10a";
 	text-transform: none;
 	font-weight: normal;
 	font-style: normal;
 	font-variant: normal;
-	font-size: 16px;
+	font-size: pxToRem(16px);
 	font-family: 'Ionicons';
 	line-height: 1;
 	speak: none;
-	margin-left: -20px;
+	margin-left: pxToRem(-20px);
+}
+.icon-star:after {
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	position: absolute;
+  	left: 100%;
+	display: block;
+	width: 20px;
+	height: 20px;
+	margin-top: pxToRem(-14px);
+	color: $star-color;
+	content:"\f4b3";
+	text-transform: none;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-size: pxToRem(16px);
+	font-family:'Ionicons';
+	line-height: 1;
+	speak: none;
+	margin-left: pxToRem(-20px);
+}
+
+.icon-unstar:after {
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	position: absolute;
+  	left: 100%;
+	display: block;
+	margin-top: pxToRem(-14px);
+	color: $unstar-color;
+	content:"\f4b2";
+	text-transform: none;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-size: pxToRem(16px);
+	font-family:'Ionicons';
+	line-height: 1;
+	speak: none;
+	margin-left: pxToRem(-20px);
 }
 
 .hide {
@@ -225,14 +282,11 @@ button, input, select, textarea {
 	display: block;
 }
 
-.item.item-1 {
-	padding-left: 30px;
-}
-.item.item-2 {
-	padding-left: 60px;
-}
-.item.item-3 {
-	padding-left: 90px;
+
+@for $i from 1 through 4 {
+	.item.item-#{$i} {
+		padding-left : pxToRem(30px * $i);
+	}
 }
 
 .pclr{
@@ -247,46 +301,45 @@ button, input, select, textarea {
 
 .home-loading {
 	text-align: center;
-	font-size: 1.2rem;
+	font-size: pxToRem(19.2px);
 	color: #999;
-	height: 300px;
-	line-height: 300px;
-	-webkit-animation: flipInX 1s infinite;
+	height: pxToRem(300px);
+	line-height: pxToRem(300px);
+//	-webkit-animation: flipInX 1s infinite;
 }
 
 .hasHeader {
-	margin-top: 43px;
+	margin-top: pxToRem(43px);
 }
 .baner {
 	height: pxToRem(190px);
 	background-color: $bg-color;
 	text-align:center;
 	color: $white-color;
-	// background-image: url(../image/tj.jpg);
 	background-position: center;
 	background-size: 100% auto;
 	background-repeat: no-repeat;
 	.photo {
-		width: 60px;
-		height: 60px;
-		margin-top: 25px;
+		width: pxToRem(60px);
+		height: pxToRem(60px);
+		margin-top: pxToRem(25px);
 	}
 	& > div {
-		margin-top: 5px;
+		margin-top: pxToRem(5px);
 	}
 }
 
 
 .modules {
 	width: 93%;
-	padding-bottom: 15px;
-	min-height: 290px;
+	padding-bottom: pxToRem(15px);
+	min-height: pxToRem(290px);
 	overflow: hidden;
 	margin: 0 auto;
 	.module {
 		display: block;
 		width: percentage(1/3);
-		height: 90px;
+		height: pxToRem(90px);
 		float: left;
 		text-align: center;
 	}
@@ -295,44 +348,44 @@ button, input, select, textarea {
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: cover;
-		margin-top: 20px;
-		margin-bottom: 20px;
+		margin-top: pxToRem(20px);
+		margin-bottom: pxToRem(20px);
 	}
 	.zixun {
-		width: getSize(41px);
-		height: getSize(34px);
+		width: pxToRem(getSize(41px));
+		height: pxToRem(getSize(34px));
 		background-image: url(../image/home/zixun.png);
 	}
 	.kaoqin {
-		width: getSize(35px);
-		height: getSize(35px);
+		width: pxToRem(getSize(35px));
+		height: pxToRem(getSize(35px));
 		background-image: url(../image/home/kaoqin.png);
 	}
 	.tongxunlu {
-		width: getSize(25px);
-		height: getSize(37px);
+		width: pxToRem(getSize(25px));
+		height: pxToRem(getSize(37px));
 		background-image: url(../image/home/tongxunlu.png);
 	}
 	.zhidu {
-		width: getSize(29px);
-		height: getSize(33px);
+		width: pxToRem(getSize(29px));
+		height: pxToRem(getSize(33px));
 		background-image: url(../image/home/zhidu.png);
 		margin-top: 24px;
 	}
 	.cidian {
-		width: getSize(32px);
-		height: getSize(40px);
+		width: pxToRem(getSize(32px));
+		height: pxToRem(getSize(40px));
 		background-image: url(../image/home/cidian.png);
 	}
 	.gonggao {
-		width: getSize(34px);
-		height: getSize(24px);
+		width: pxToRem(getSize(34px));
+		height: pxToRem(getSize(24px));
 		background-image: url(../image/home/gonggao.png);
 		margin-top: 27px;
 	}
 	.home {
-		width: getSize(36px);
-		height: getSize(33px);
+		width: pxToRem(getSize(36px));
+		height: pxToRem(getSize(33px));
 		background-image: url(../image/home/home.png);
 	}
 
@@ -344,15 +397,15 @@ button, input, select, textarea {
     -webkit-user-select: none;
     -webkit-tap-highlight-color: transparent;
 	-webkit-user-drag: none;
-	position: fixed;
+	position: absolute;
 	right: 0;
 	left: 0;
 	top: 0;
 	z-index: 9;
 	box-sizing: border-box;
-	padding: 5px;
+	padding: pxToRem(5px);
 	width: 100%;
-	height: 44px;
+	height: pxToRem(44px);
 	border-width: 0;
 	border-style: solid;
 	border-top: 1px solid transparent;
@@ -360,36 +413,27 @@ button, input, select, textarea {
 	word-wrap: break-word;
 	background-color: $bg-color;
 	text-align: center;
-	line-height: 32px;
+	line-height: pxToRem(32px);
 	.back {
 		float: left;
 		display: inline-block;
-		width: 20px;
-		height: 20px;
-		margin-top: 5px;
+		width: pxToRem(30px);
+		height: pxToRem(30px);
+		margin-top: pxToRem(5px);
 	}
 }
 .side-bar {
 	position: absolute;
 	top: 13%;
-	right: 15px;
+	right: pxToRem(15px);
 	font-style: normal;
 }
 
-/* tab选项 */
 .tab {
 	.tab-item {
 		display: inline-block;
 		width: 30%;
 		border: 1px solid $white-color;
-		/* &:last-child {
-			border-top-left-radius: 5px;
-			border-bottom-left-radius: 5px;
-		} */
-		/* &:last {
-			border-top-right-radius: 3px;
-			border-bottom-right-radius: 3px;
-		} */
 		&.cur {
 			background-color: $white-color;
 			color: $bg-color;
@@ -397,14 +441,13 @@ button, input, select, textarea {
 	}
 }
 
-/* 药物词典 */
 .search-title {
 	background-color:$white-color;
 	.search {
 	  margin: 0 auto;
 	  text-align: center;
-	  padding-top: 20px;
-	  max-width: 200px;
+	  padding-top: pxToRem(20px);
+	  max-width: pxToRem(200px);
 	  width: 100%;
 	}
 	p {
@@ -415,15 +458,15 @@ button, input, select, textarea {
 		font: inherit;
 	}
 	.search input {
-	  padding: 4px 6px;
-	  padding-left: 20px;
-	  width: 200px;
-	  height: 35px;
+	  padding: pxToRem(4px) pxToRem(6px);
+	  padding-left: pxToRem(20px);
+	  width: pxToRem(200px);
+	  height: pxToRem(35px);
 	  border: 0;
-	  border-radius: 4px;
+	  border-radius: pxToRem(4px);
 	  background: #F5F5F5;
 	  text-align: center;
-	  font-size: 14px;
+	  font-size: pxToRem(14px);
 	  outline: none;
 	  -webkit-appearance: none;
 	  -webkit-box-flex: 1;
@@ -431,8 +474,8 @@ button, input, select, textarea {
 
 	.search i {
 	  position: relative;
-	  top: -25px;
-	  left: -88px;
+	  top: pxToRem(-25px);
+	  left: pxToRem(-88px);
 	  color: #999;
 	  margin: 0;
 	  padding: 0;
@@ -467,7 +510,7 @@ button, input, select, textarea {
 	li {
 		width: 50%;
 		float: left;
-        margin-top: 20px;
+        margin-top: pxToRem(20px);
         img,div {
         	width: 90%;
         	height: 90%;
@@ -476,17 +519,16 @@ button, input, select, textarea {
         	background-color: $white-color;
         }
         div {
-        	padding: 5px;
+        	padding: pxToRem(5px);
         }
 	}
 }
 
-/* 药物详情 */
 .content {
-	margin: 0 15px;
+	margin: 0 pxToRem(15px);
 	.medic-title {
-		padding-top: 10px;
-		padding-bottom: 10px;
+		padding-top: pxToRem(10px);
+		padding-bottom: pxToRem(10px);
 		font-weight: bold;
 	}
 	img {
@@ -498,15 +540,12 @@ button, input, select, textarea {
 	}
 }
 
-
-/* 规章制度 */
 .rule-list {
 	div.item {
-		background-color: #eeeeee;
+		background-color: $item-bg-color;
 	}
 }
 
-/* 通知公告 */
 .gonggao-list {
 	.gonggao-title {
 		width: 60%;
@@ -516,12 +555,12 @@ button, input, select, textarea {
 		white-space: nowrap;
 	}
 	.gonggao-date {
-		color: #ccc;
+		color: $gray-color;
 		float: right;
 	}
 	.brief {
 		width: 65%;
-		color: #ccc;
+		color: $gray-color;
 		display: inline-block;
 		text-overflow: ellipsis;
 		overflow: hidden;
@@ -529,79 +568,29 @@ button, input, select, textarea {
 	}
 	.status {
 		float: right;
-		color: #fff;
-		background-color: red;
+		color: $white-color;
+		background-color: $red-color;
 		display: inline-block;
-		width: 36px;
-		height: 16px;
-		border-radius: 8px;
+		width: pxToRem(36px);
+		height: pxToRem(16px);
+		border-radius: pxToRem(8px);
 		text-align: center;
 		font-size: pxToRem(12px);
+		padding-top: pxToRem(3px);
 	}
 	.go-right:after {
-		margin-top: -28px;
+		margin-top: pxToRem(-28px);
 	}
 }
+.notice-date {
+	display: inline-block;
+	width: 100%;
+	text-align: right;
+	color: $gray-color;
+	margin-bottom: pxToRem(10px);
+}
 
-/* .login {
-	position: absolute;
-	top: 200px;
-	left: 47%;
-	width: 105px;
-	height: 32px;
-	color: #333333;
-	background-color: #ccc;
-} */
-/* .contain {
-	padding-top: 44px;
-	padding-bottom: 44px;
-} */
-/* .contain .modules {
-	width: 93%;
-	padding-bottom: 15px;
-	min-height: 320px;
-	overflow: hidden;
-	margin: 0 auto;
-} */
-/* .modules i {
-	display: block;
-	height: 85px;
-	background-image: url(../image/bg.png);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 100% auto;
-} */
-
-/* .footer {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 44px;
-	background-color: #18a89d;
-	color: $white-color;
-	padding: 0 5px;
-}
-.footer-bar-left,.footer-bar-right {
-	width: 44px;
-	height: 44px;
-	text-align: center;
-}
-.footer-bar-left {
-	float: left;
-}
-.footer-bar-right {
-	float: right;
-}
-.index,.my {
-	display: block;
-	height: 30px;
-	background-image: url(../image/m.png);
-	background-position: center;
-	background-size: 100% auto;
-} */
-
-/* #wrapper {
+#wrapper {
 	position: absolute;
 	z-index: 1;
 	top: 0;
@@ -630,32 +619,8 @@ button, input, select, textarea {
 	-ms-text-size-adjust: none;
 	-o-text-size-adjust: none;
 	text-size-adjust: none;
-} */
-
-#content {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-
-	/* Prevent native touch events on Windows */
-	-ms-touch-action: none;
-
-	/* Prevent the callout on tap-hold and text selection */
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-
-	/* Prevent text resize on orientation change, useful for web-apps */
-	-webkit-text-size-adjust: none;
-	-moz-text-size-adjust: none;
-	-ms-text-size-adjust: none;
-	-o-text-size-adjust: none;
-	text-size-adjust: none;
 }
-/* 切换页面动画 */
+
 .pt-page-moveToLeft {
 	-webkit-animation: moveToLeft .6s ease both;
 	-moz-animation: moveToLeft .6s ease both;
@@ -749,4 +714,234 @@ button, input, select, textarea {
     -ms-transform: perspective(400px);
     transform: perspective(400px);
   }
+}
+
+.my-dialog{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    .alert-body{
+        height: pxToRem(146px);
+        width: 80%;
+        position: absolute;
+        top: 26%;
+        left: 10%;
+        z-index: 3;
+        .alert-title{
+            background-color: $dialog-head-color;
+            height: pxToRem(26px);
+            color: $white-color;
+            text-align: center;
+            padding-top: pxToRem(5px);
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        .alert-content{
+            background-color: $dialog-bg-color;
+            height: pxToRem(115px);
+            width: 100%;
+            p{
+                font-size: pxToRem(13px);
+                float: left;
+                width: 90%;
+                height: pxToRem(60px);
+                margin: pxToRem(5px) 5%;
+                text-align: center;
+            }
+            div{
+                float: left;
+                width: 46%;
+                height: pxToRem(25px);
+                font-size: pxToRem(15px);
+                margin: pxToRem(5px) 26%;
+            }
+            input{
+                border-radius: pxToRem(5px);
+                background-color: $dialog-but-color;
+                width: 100%;
+                height: pxToRem(25px);
+            }
+        }
+    }
+    .tip-body{
+        height: pxToRem(146px);
+        width: 80%;
+        position: absolute;
+        top: 26%;
+        left: 10%;
+        z-index: 3;
+        background-color: $dialog-bg-color;
+        padding-top: pxToRem(50px);
+        font-size: pxToRem(20px);
+        p{
+            text-align: center;
+            margin: auto pxToRem(15px);
+        }
+    }
+    .confirm-body{
+        height: pxToRem(146px);
+        width: 80%;
+        position: absolute;
+        top: 26%;
+        left: 10%;
+        z-index: 3;
+        .confirm-title{
+            background-color: $dialog-head-color;
+            height: pxToRem(26px);
+            color: $white-color;
+            text-align: center;
+            padding-top: pxToRem(5px);
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        .confirm-content{
+            background-color: $dialog-bg-color;
+            height: pxToRem(115px);
+            width: 100%;
+            p{
+                font-size: pxToRem(13px);
+                float: left;
+                width: 90%;
+                height: pxToRem(60px);
+                margin: pxToRem(5px) 5%;
+                text-align: center;
+            }
+            div{
+                float: left;
+                width: 60%;
+                height: pxToRem(25px);
+                font-size: pxToRem(15px);
+                margin: pxToRem(5px) 20%;
+            }
+            input{
+                border-radius: 5px;
+                background-color: $dialog-but-color;
+                width: 45%;
+                height: pxToRem(25px);
+            }
+            .right{
+                margin-left: 5%;
+            }
+        }
+    }
+    .prompt-body{
+        height: pxToRem(146px);
+        width: 80%;
+        position: absolute;
+        top: 26%;
+        left: 10%;
+        z-index: 3;
+        .prompt-title{
+            background-color: $dialog-head-color;
+            height: pxToRem(26px);
+            color: $white-color;
+            text-align: center;
+            padding-top: pxToRem(5px);
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        .prompt-content{
+            background-color: $dialog-bg-color;
+            height: pxToRem(115px);
+            width: 100%;
+            p{
+                font-size: pxToRem(14px);
+                float: left;
+                width: 90%;
+                height: pxToRem(25px);
+                margin: pxToRem(5px) 8%;
+            }
+            div{
+                float: left;
+                width: 60%;
+                height: pxToRem(65px);
+                font-size: pxToRem(15px);
+                margin: pxToRem(5px) 20%;
+            }
+            .input{
+                height: pxToRem(23px);
+                display: block;
+                width: 84%;
+                margin: pxToRem(5px) 8%;
+            }
+            .btn{
+                border-radius: 5px;
+                background-color: $dialog-but-color;
+                width: 45%;
+                height: pxToRem(25px);
+            }
+            .right{
+                margin-left: 5%;
+            }
+        }
+    }
+}
+.my-dialog-tip{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    background-color: #939393;
+    opacity: 0.6;
+}
+.my-dialog-tip-container{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+    .tip-body{
+        min-height: pxToRem(26px);
+        max-width: 50%;
+        margin: 71% 25% auto;
+        background-color: #2c2c2c;
+        font-size: pxToRem(15px);
+        color: $white-color;
+        min-width: pxToRem(50px);
+        border-radius: 5px;
+        text-overflow: ellipsis;
+        p{
+            text-align: center;
+            margin: auto pxToRem(15px);
+            padding: pxToRem(6px);
+        }
+    }
+}
+
+
+
+@-webkit-keyframes rotate{
+	from{-webkit-transform:rotate(0deg)}
+	to{-webkit-transform:rotate(360deg)}
+}
+@-moz-keyframes rotate{
+	from{-moz-transform:rotate(0deg)}
+	to{-moz-transform:rotate(360deg)}
+}
+@-ms-keyframes rotate{
+	from{-ms-transform:rotate(0deg)}
+	to{-ms-transform:rotate(360deg)}
+}
+@-o-keyframes rotate{
+	from{-o-transform:rotate(0deg)}
+	to{-o-transform:rotate(360deg)}
+}
+.loading {
+	background-image: url(../image/loading.png);
+	background-repeat: no-repeat;
+	animation: 1s linear 0s normal none infinite rotate;
+	-webkit-animation: 1s linear 0s normal none infinite rotate;
+	height: 48px;
+	width: 48px;
+	position: absolute;
+	left: 50%;
+	margin-left:-24px; 
+	margin-top: pxToRem(180px);
+	background-size: cover;
 }

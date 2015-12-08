@@ -2,12 +2,14 @@
 
 define([
     'react',
+    'common',
     'jsx!component/common/HeaderComponent.react'
-], function (React, HeaderComponent) {
+], function (React, common, HeaderComponent) {
 
     return React.createClass({
         componentDidMount: function() {
             $('#content').removeClass('home-loading').removeClass('pt-page-moveToLeft').addClass('pt-page-moveFromLeft');
+            common.scrollbar();
         },
         componentWillUnmount: function() {
             $('#content').removeClass('pt-page-moveFromLeft').addClass('pt-page-moveToLeft');

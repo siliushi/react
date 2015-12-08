@@ -4,9 +4,6 @@ define([
     'react'
 ], function (React) {
     return React.createClass({
-        back: function() {
-            
-        },
         componentDidMount: function() {
             $('.back').on('click', function() {
                 $('#content').removeClass('pt-page-moveFromLeft').addClass('pt-page-moveToLeft');
@@ -19,7 +16,7 @@ define([
                 bar = <i className="back go-left"></i>;
             }
             if(this.props.sideBar) {
-                sideBar = <i className="side-bar">{this.props.sideBar}</i>
+                sideBar = <i className="side-bar collect">{this.props.sideBar}</i>
             }
 
             return <header className="header">

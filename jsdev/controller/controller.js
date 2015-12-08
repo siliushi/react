@@ -25,8 +25,6 @@ define([
 					$(this).nextUntil('.item-1').show(500).removeClass('arrow-right').addClass('arrow-down');
 					$(this).removeClass('arrow-right').addClass('arrow-down');
 				});
-
-				
 			},
 			list2: function() {
 
@@ -37,9 +35,6 @@ define([
 		},
 		rule: {
 			list: function() {
-				$(document).off('click').on('click', '.side-bar', function() {
-					alert('你点击了收藏！');
-				})
 			},
 			list2: function() {
 
